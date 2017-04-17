@@ -49,7 +49,9 @@ class MazeTraverser
     puts @board.render
     puts "S = starting node\n"\
         "E = ending node\n"\
-        "V = visited node\n"
+        "V = visited node\n"\
+        "N = node\n"\
+        "* = wall\n"
   end
 
   def traverse
@@ -73,6 +75,7 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   file_name = ARGV[0] || "maze.txt"
+  ARGV.clear
   traverser = MazeTraverser.new(file_name)
   traverser.show_explanation
   traverser.traverse
